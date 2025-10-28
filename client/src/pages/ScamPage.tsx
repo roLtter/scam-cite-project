@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import axios, { isAxiosError } from 'axios';
+import { isAxiosError } from 'axios';
 import Header from '../components/Header.tsx';
 import UserForm from '../components/scamUtils/userForm.tsx';
 import UserList from '../components/scamUtils/userList.tsx';
 import setThemeVariables from "../components/helps/varsSetter.ts";
-import {getStoredTheme, storeTheme} from "../components/helps/themeManager.ts";
+import { getStoredTheme, storeTheme } from "../components/helps/themeManager.ts";
+import { api } from '../api.ts';
 
 interface User {
     id: number;
@@ -22,25 +23,27 @@ function ScamPage() {
         storeTheme(isDark);
         setThemeVariables(isDark);
 
-        axios
-            .get('http://localhost:3000/users')
-            .then((response) => {
+        const fetchUsers = async () => {
+            try {
+                const response = await api.get<User[]>('/users'); // использует api.ts
                 setUsers(response.data);
-            })
-            .catch((error) => {
+            } catch (error) {
                 console.error('Ошибка при загрузке пользователей:', error);
-            });
+            }
+        };
+
+        fetchUsers();
     }, [isDark]);
 
     const addUser = async (passport: string, fullName: string) => {
         setServerError('');
         try {
-            const response = await axios.post('http://localhost:3000/users', { passport, fullName });
+            const response = await api.post<User>('/users', { passport, fullName }); // api.ts
             setUsers([...users, response.data]);
             setShowMessage(true);
         } catch (error) {
             if (isAxiosError(error) && error.response?.status === 409) {
-                setServerError(error.response.data.message || 'Паспорт уже занят');
+                setServerError(error.response.data?.message || 'Паспорт уже занят');
             } else {
                 setServerError('Произошла ошибка при добавлении пользователя');
             }
@@ -48,9 +51,7 @@ function ScamPage() {
         }
     };
 
-    const clearErrors = () => {
-        setServerError('');
-    };
+    const clearErrors = () => setServerError('');
 
     return (
         <div id="form1ed" className="h-[100vh]">
