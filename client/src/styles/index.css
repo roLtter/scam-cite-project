@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(reset.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    color: #4D4D4DFF;
+    font-family: "Raleway", serif;
+    background-color: #FFFFFFFF
+}
+
+.blocks {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "f f a a"
+        "f f a a"
+        "i i a a"
+        "i i a a"
+        "z z a a"
+        "z z a a";
+}
+
+.feedback { grid-area: i; }
+.reasons { grid-area: f; }
+.promo { grid-area: z; }
+.ads {grid-area: a;}
+
+.container {
+    transition: opacity 0.5s ease-out;
+    padding: calc(85px * 2) calc(145px * 2) calc(30px * 2);
+}

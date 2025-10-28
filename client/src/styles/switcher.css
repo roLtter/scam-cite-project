@@ -1,0 +1,61 @@
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 32px;
+}
+
+.switch__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.switch__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 32px;
+    transition: 1s;
+    overflow: hidden;
+    background-image: url("../assets/checkbox/light_bg.svg");
+}
+
+.switch__slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/checkbox/dark_bg.svg");
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.switch__input:checked + .switch__slider::after {
+    opacity: 1;
+    background-color: #1A1A1A;
+}
+
+.switch__slider::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    transition: transform 1s, opacity 1s;
+    background-image: url("../assets/checkbox/light_sun.svg");
+    z-index: 2;
+}
+
+.switch__input:checked + .switch__slider::before {
+    background-image: url("../assets/checkbox/dark_moon.svg");
+    transform: translateX(38px);
+}
+
+.no-transition * {
+    transition: none !important;
+}

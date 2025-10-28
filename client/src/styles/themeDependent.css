@@ -1,0 +1,43 @@
+:root{
+    --bg_1: #fff;
+    --bg_2: #F5F7FA;
+    --font_1: #4D4D4D;
+    --font_2: #da1f1f;
+    --button-bg: #e62e2e;
+    --button-hover-bg: #e14747;
+    --button-focus-border: #130505;
+    --button-active-bg: #8f1414;
+}
+
+html {
+    background-color: var(--bg_1);
+}
+
+button{
+    background-color: var(--button-bg);
+}
+
+button:hover{
+    background-color: var(--button-hover-bg);
+}
+
+button:focus{
+    border: 2px solid var(--button-focus-border);
+}
+
+button:active{
+    background-color: var(--button-hover-bg);
+}
+
+#colored {
+    color: var(--font_2);
+}
+
+#form1ed {
+    color: var(--font_1);
+    background-color: var(--bg_1);
+}
+
+#container {
+    background-color: var(--bg_2);
+}

@@ -1,0 +1,231 @@
+@media (max-width: 500px) {
+    .hdr {
+        padding-right: 5px;
+        margin-left: 10px;
+    }
+
+    .hdrAdress {
+        font-size: 25px;
+    }
+
+    .hdrH2 {
+        font-size: 22px;
+    }
+
+    .hdrH3 {
+        font-size: 16px;
+    }
+
+    .hdrBut {
+        height: 35px;
+        width: 70px;
+        top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px
+    }
+
+    .hdrRS {
+        margin-right: 1vh !important;
+    }
+
+    .pFieldInf {
+        margin-top: 40px !important;
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+        width: calc(100% - 80px) !important;
+    }
+
+    .pFieldH1 {
+        font-size: 31px;
+    }
+
+    .pFieldP {
+        font-size: 14px;
+    }
+
+    .pFieldBut {
+        font-size: 16px;
+        width: 110px;
+        height: 40px
+    }
+
+    .blocks{
+        margin-top: 5px !important;
+        margin-right: 15px !important;
+        margin-left: 15px !important;
+    }
+
+    .reasonsH2,
+    .feedbackH2,
+    .promoH2 {
+        font-size: 24px;
+    }
+
+    .reasonsLi,
+    .feedbackBQ,
+    .promoDet {
+        font-size: 14px;
+    }
+
+    .feedbackP {
+        font-size: 16px;
+    }
+
+    .reasonsImg,
+    .feedbackImg,
+    .promoImg {
+        width: 50px;
+    }
+
+    .adP {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .f-hide {
+        display: none !important;
+    }
+
+    .f-show {
+        display: inline-block !important;
+    }
+}
+
+@media screen and (max-width:801px){
+    .pFieldInf {
+        margin-top: 70px;
+        margin-left: 80px;
+        margin-right: 80px;
+        width: calc(100% - 160px);
+    }
+
+    .pFieldBut {
+        font-size: 20px;
+        width: 130px;
+        height: 50px;
+    }
+
+    .pFieldH1 {
+        font-size: 48px;
+    }
+
+    .blocks{
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-areas:
+        "f f"
+        "f f"
+        "a a"
+        "a a"
+        "a a"
+        "a a"
+        "i i"
+        "i i"
+        "z z"
+        "z z" !important;
+        gap: 20px;
+    }
+
+    .ads {
+        gap: 30px 20px;
+    }
+}
+
+@media screen and (max-width: 950px){
+
+    .ads {
+        gap: 90px 20px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+
+    .ads {
+        gap: 55px 20px;
+    }
+}
+
+@media screen and (max-width:1350px){
+    .pField {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pFieldInf {
+        margin-left: 110px;
+        margin-right: 110px;
+        width: calc(100% - 220px);
+    }
+
+    .pFieldImg {
+        position: relative;
+        margin: 0;
+    }
+
+    .blocks{
+        margin-top: 10px !important;
+    }
+
+    .reasonsH2,
+    .feedbackH2,
+    .promoH2 {
+        font-size: 35px;
+    }
+
+    .reasonsLi,
+    .feedbackBQ,
+    .promoDet {
+        font-size: 16px;
+    }
+
+    .feedbackP {
+        font-size: 18px;
+    }
+
+    .reasonsImg,
+    .feedbackImg,
+    .promoImg {
+        width: 90px;
+    }
+
+    .ads {
+        gap: 35px 20px;
+    }
+
+    .ad {
+        max-height: fit-content;
+        justify-content: normal;
+    }
+
+    .adP {
+        margin-top: 0;
+        font-size: 12px;
+    }
+
+    .adImg {
+        width: 100%;
+        height: max-content;
+        max-height: none;
+    }
+}
+
+@media screen and (max-width:1520px){
+    .adImg {
+        max-width: 100%;
+        height: fit-content;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    body{
+        max-width: 1920px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .pField {
+        border-radius: 4px;
+    }
+}
