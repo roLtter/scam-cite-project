@@ -10,7 +10,7 @@ export default function MainGrid({isDark} : MainProps) {
             <section className="reasons"><Reasons isDark={isDark}></Reasons></section>
             <section className="feedback"><Feedback isDark={isDark}></Feedback></section>
             <section className="promo"><Promo isDark={isDark}></Promo></section>
-            <section className="ads grid grid-cols-2 gap-x-[30px] gap-y-[20px]"><Ads isDark={isDark}></Ads></section>
+            <section className="ads grid grid-cols-2 gap-x-[30px] gap-y-[20px]"><Ads></Ads></section>
         </div>
     )
 }
